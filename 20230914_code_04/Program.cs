@@ -14,6 +14,7 @@ namespace _20230914_code_04
             int a = 1;
             int X = 0;
             int Y = 0;
+            int win = 1;
             int tmep = 0;
             Random rand = new Random();
             for(int y=0; y<5; y++)
@@ -44,8 +45,9 @@ namespace _20230914_code_04
             {
                 for (int x = 0; x < 5; x++)
                 {
-                   if( arr[y, x]==1)
+                   if( arr[y, x]==25)
                     {
+                        arr[y, x] = 0;
                         Y = y;
                         X = x;
                     }
@@ -61,9 +63,10 @@ namespace _20230914_code_04
                 {
                     for (int x = 0; x < 5; x++)
                     {
-                        Console.Write(" " + arr[y, x] + " ");
+                        Console.Write(arr[y, x] +"  ");
 
                     }
+                    Console.WriteLine();
                     Console.WriteLine();
                 }
 
@@ -116,7 +119,43 @@ namespace _20230914_code_04
                         break;
 
                 }
-                
+
+
+                for (int y = 0; y < 5; y++)
+                {
+                    if(y==4)
+                    {
+                        for (int x = 0; x < 4; x++)
+                        {
+                            if (arr[y, x] == win)
+                            {
+                                win++;
+                            }
+                        }
+                    }
+                    for (int x = 0; x < 5; x++)
+                    {
+                        if (arr[y, x] == win)
+                        {
+                            win++;
+                        }
+                    }
+                }
+
+      
+
+                if (win==25)
+                {
+                    Console.WriteLine("게임승리");
+                    Console.ReadKey();
+                }
+                else
+                {
+                    win = 1;
+                }
+               
+            
+
 
             }
 
