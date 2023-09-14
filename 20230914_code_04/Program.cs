@@ -12,8 +12,8 @@ namespace _20230914_code_04
         {
             int[,] arr = new int[5, 5];
             int a = 1;
-            int X = 2;
-            int Y = 4;
+            int X = 0;
+            int Y = 0;
             int tmep = 0;
             Random rand = new Random();
             for(int y=0; y<5; y++)
@@ -40,7 +40,18 @@ namespace _20230914_code_04
                 arr[num_3, num_4] = tmep;
             }
 
-
+            for (int y = 0; y < 5; y++)
+            {
+                for (int x = 0; x < 5; x++)
+                {
+                   if( arr[y, x]==1)
+                    {
+                        Y = y;
+                        X = x;
+                    }
+                   
+                }
+            }
 
             while (true)
             {
